@@ -40,6 +40,7 @@ class ReadFileData(object):
         with open(path, "r", encoding="utf-8") as parameter:
             json_data = json.load(parameter)
             logger.info("读到数据 ==>>  {} ".format(json_data))
+
             return json_data
 
     @staticmethod
