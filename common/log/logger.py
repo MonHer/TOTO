@@ -23,7 +23,7 @@ if not os.path.exists(LOG_PATH):
 
 class Logger:
     def __init__(self):
-        self.LogName = os.path.join(LOG_PATH, "{}.log".format(time.strftime("%Y%m%d")))
+        self.LogName = os.path.join(LOG_PATH, "{}.log".format(time.strftime("%Y%m%d%H%M%S")))
         self.LogGer = logging.getLogger("log")
         self.LogGer.setLevel(logging.DEBUG)
         self.FoMmaTer = logging.Formatter(
