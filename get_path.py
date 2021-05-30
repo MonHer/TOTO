@@ -8,6 +8,7 @@
 """
 
 from pathlib import Path
+from common.log.logger import logger
 
 
 class HomePath(object):
@@ -17,3 +18,4 @@ class HomePath(object):
 
 
 home_path = HomePath.get_path()
+logger.info("当前项目的根目录为{}".format(home_path))
