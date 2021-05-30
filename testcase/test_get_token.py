@@ -8,8 +8,8 @@
 """
 
 import allure
+import pytest
 from api.GetToken import GetToken
-from common.log.logger import logger
 from common.http.testcase import TestCase
 
 
@@ -26,4 +26,3 @@ class TestGetToken(TestCase):
                 .json()
             assert token["code"] == "0000000"
             allure.attach(str(token), str(token))
-            logger.info(token)

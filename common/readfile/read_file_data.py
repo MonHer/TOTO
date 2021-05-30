@@ -9,6 +9,7 @@
 
 import json
 import yaml
+from get_path import home_path
 from pathlib import Path
 from common.log.logger import logger
 from configparser import ConfigParser
@@ -27,9 +28,7 @@ class ReadFileData(object):
 
     @staticmethod
     def get_path(file_path):
-        current_path = str(Path().absolute().parent)
-        logger.info("获取根目录 %s" % current_path)
-        path = Path(current_path, file_path)
+        path = Path.joinpath(home_path, file_path)
         logger.info("拼接后的文件地址为 ==>>  {} ".format(path))
         return path
 
@@ -64,10 +63,11 @@ class ReadFileData(object):
 
 
 def main():
-    yaml_path = "config/service.yaml"
-    json_path = "data/json/merlot/queryContractSignCheckInfo.json"
-    print(ReadFileData.load_yaml(yaml_path))
-    print(ReadFileData.load_json(json_path))
+    # yaml_path = "config/service.yaml"
+    # json_path = "data/json/merlot/queryContractSignCheckInfo.json"
+    # print(ReadFileData.load_yaml(yaml_path))
+    # print(ReadFileData.load_json(json_path))
+    print(type(ReadFileData.gets_path()))
 
 
 if __name__ == '__main__':
