@@ -13,7 +13,7 @@ import logging
 from pathlib import Path
 
 # BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BASE_PATH = Path().absolute().parent.parent
+BASE_PATH = Path().absolute()
 # 定义log文件路径
 LOG_PATH = os.path.join(BASE_PATH, "log")
 print(LOG_PATH)
@@ -42,6 +42,6 @@ logger = Logger().LogGer
 
 if __name__ == "__main__":
     logger.info("--测试开始--")
-    logger.info(BASE_PATH)
+    # logger.info()
     logger.info(LOG_PATH)
     logger.debug("--测试结束--")

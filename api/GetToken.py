@@ -15,4 +15,5 @@ class GetToken(HttpRequest):
     __IP = ReadFileData.load_yaml("config/servicer.yaml")
     method = HttpRequest.EnumHttpMethod.POST
     url = __IP["test"]["url"] + "/aiproduct/tokenService/getToken"
+    # url = __IP.get("url") + "/aiproduct/tokenService/getToken"
     headers = {"Content-Type": "application/json"}

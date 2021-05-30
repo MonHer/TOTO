@@ -9,7 +9,6 @@
 
 import json
 import yaml
-from get_path import home_path
 from pathlib import Path
 from common.log.logger import logger
 from configparser import ConfigParser
@@ -28,7 +27,7 @@ class ReadFileData(object):
 
     @staticmethod
     def get_path(file_path):
-        path = Path.joinpath(home_path, file_path)
+        path = Path.joinpath(Path(__file__).absolute().parent.parent.parent, file_path)
         logger.info("拼接后的文件地址为 ==>>  {} ".format(path))
         return path
 
