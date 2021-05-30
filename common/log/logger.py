@@ -13,7 +13,7 @@ import logging
 from pathlib import Path
 
 # BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BASE_PATH = Path().absolute()
+BASE_PATH = Path(__file__).absolute().parent.parent.parent
 # 定义log文件路径
 LOG_PATH = os.path.join(BASE_PATH, "log")
 print(LOG_PATH)
